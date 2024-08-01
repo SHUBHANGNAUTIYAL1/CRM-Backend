@@ -11,7 +11,9 @@ dotenv.config();
 
 const connect = async () => {
   try {
-    await mongoose.connect(process.env.MONGO);
+    await mongoose.connect(
+      "mongodb+srv://someshrocks144:somesh2004@cluster0.5yfptoz.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+    );
     console.log("Connected to MongoDB");
   } catch (error) {
     throw error;
@@ -30,5 +32,5 @@ app.use("/api/popup", popupRoute);
 
 app.listen(8100, () => {
   connect();
-  console.log("connected");
+  console.log("Server Running");
 });
