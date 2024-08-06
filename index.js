@@ -3,6 +3,7 @@ import dotenv from"dotenv"
 import mongoose from "mongoose"
 import authRoute from "./routes/auth.js"
 import contactRoute from "./routes/Contact.js"
+import PopRoute from "./routes/Pop.js"
 
 import cors from 'cors';
 
@@ -26,6 +27,7 @@ app.use(cors());
     app.use(express.json())
     app.use("/api/auth",authRoute);
     app.use("/api/contact",contactRoute);
+    app.use("/api/pop",PopRoute);
 
 
 app.listen(8100, () => {
